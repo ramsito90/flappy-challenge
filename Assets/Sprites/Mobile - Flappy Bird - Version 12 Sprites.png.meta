@@ -277,6 +277,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: suelo
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 456
+        width: 168
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 156b26ddb36ab5447b390bbabbf7297d
+      internalID: -1070179778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -294,6 +315,7 @@ TextureImporter:
       pj_1_1: -527459453
       pj_1_2: 1050234798
       pj_1_3: -1177139904
+      suelo: -1070179778
       tubo_abajo: -1916701313
       tubo_arriba: -438902611
   mipmapLimitGroupName: 
