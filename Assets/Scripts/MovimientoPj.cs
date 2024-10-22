@@ -21,18 +21,18 @@ public class MovimientoPj : MonoBehaviour {
 
     // Update is called once per frame
     private void Update() {
-        if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame) {
-            Salto();
-            return;
-        }
-
-        //TODO quitar, irá con el botón de abajo
-        if (Touch.activeFingers.Count == 1 && Touch.activeFingers[0].currentTouch.phase == UnityEngine.InputSystem.TouchPhase.Ended) {
-            Salto();
-        }
+        // if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame) {
+        //     Salto();
+        //     return;
+        // }
+        //
+        // //TODO quitar, irá con el botón de abajo
+        // if (Touch.activeFingers.Count == 1 && Touch.activeFingers[0].currentTouch.phase == UnityEngine.InputSystem.TouchPhase.Ended) {
+        //     Salto();
+        // }
     }
 
-    private void Salto() {
+    public void Salto() {
         _pjRigidbody2D.velocity = Vector2.up * velocity;
     }
 
