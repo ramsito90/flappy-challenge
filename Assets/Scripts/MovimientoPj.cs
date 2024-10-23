@@ -1,7 +1,5 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.EnhancedTouch;
-using Touch = UnityEngine.InputSystem.EnhancedTouch.Touch;
 
 public class MovimientoPj : MonoBehaviour {
 
@@ -9,27 +7,15 @@ public class MovimientoPj : MonoBehaviour {
     [SerializeField] private float rotationSpeed = 10f;
 
     private Rigidbody2D _pjRigidbody2D;
+    private float _originalPositionX;
 
     private void Awake() {
         EnhancedTouchSupport.Enable();
     }
 
-    // Start is called before the first frame update
     private void Start() {
         _pjRigidbody2D = GetComponent<Rigidbody2D>();
-    }
-
-    // Update is called once per frame
-    private void Update() {
-        // if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame) {
-        //     Salto();
-        //     return;
-        // }
-        //
-        // //TODO quitar, irá con el botón de abajo
-        // if (Touch.activeFingers.Count == 1 && Touch.activeFingers[0].currentTouch.phase == UnityEngine.InputSystem.TouchPhase.Ended) {
-        //     Salto();
-        // }
+        _originalPositionX = transform.position.x;
     }
 
     public void Salto() {
@@ -38,6 +24,9 @@ public class MovimientoPj : MonoBehaviour {
 
     private void FixedUpdate() {
         transform.rotation = Quaternion.Euler(0, 0, _pjRigidbody2D.velocity.y * rotationSpeed);
+        if (transform.position.x != _originalPositionX) {
+            transform.position += Vector3.left * (transform.position.x - _originalPositionX);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
