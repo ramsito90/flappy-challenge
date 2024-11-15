@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using GooglePlayGames;
+using GooglePlayGames.BasicApi;
+using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
@@ -8,6 +10,19 @@ public class GameManager : MonoBehaviour {
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
         QualitySettings.vSyncCount = 0; // Set vSyncCount to 0 so that using .targetFrameRate is enabled.
         Application.targetFrameRate = 60;
+
+        PlayGamesPlatform.Activate();
+        PlayGamesPlatform.Instance.Authenticate(ProcessAuthentication);
+    }
+
+    private static void ProcessAuthentication(SignInStatus status) {
+        if (status == SignInStatus.Success) {
+            // Continue with Play Games Services
+        } else {
+            // Disable your integration with Play Games Services or show a login button
+            // to ask users to sign-in. Clicking it should call
+            PlayGamesPlatform.Instance.ManuallyAuthenticate(ProcessAuthentication);
+        }
     }
 
     private void Update() {
