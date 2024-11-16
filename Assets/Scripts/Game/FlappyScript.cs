@@ -3,6 +3,8 @@ using UnityEngine.InputSystem.EnhancedTouch;
 using UnityEngine.SceneManagement;
 
 public class FlappyScript : MonoBehaviour {
+    
+    private static FlappyScript instance;
 
     [SerializeField] private float velocity = 1.7f;
     [SerializeField] private float rotationSpeed = 10f;
@@ -11,7 +13,12 @@ public class FlappyScript : MonoBehaviour {
     private float _originalPositionX;
 
     private void Awake() {
+        instance = this;
         EnhancedTouchSupport.Enable();
+    }
+    
+    public static FlappyScript GetInstance() {
+        return instance;
     }
 
     private void Start() {

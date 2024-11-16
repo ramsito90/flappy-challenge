@@ -3,11 +3,21 @@ using UnityEngine.EventSystems;
 
 public class BtnSettingsScript : DualSpriteClickableObject {
 
+    private static BtnSettingsScript instance;
+
     [SerializeField] public GameObject pnlSettings;
 
     private const float Speed = 4;
     private Vector3 mEndPosition;
     private bool mPanelShown = false;
+
+    public void Awake() {
+        instance = this;
+    }
+
+    public static BtnSettingsScript GetInstance() {
+        return instance;
+    }
 
     private new void Start() {
         base.Start();

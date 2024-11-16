@@ -16,13 +16,14 @@ public abstract class DualSpriteClickableObject : MonoBehaviour, IPointerClickHa
      
     public abstract void OnPointerClick(PointerEventData eventData);
     
-    public void OnPointerDown(PointerEventData eventData) {
+    public virtual void OnPointerDown(PointerEventData eventData) {
         gameObject.GetComponent<SpriteRenderer>().sprite = pressedBtnSprite;
     }
 
-    public void OnPointerUp(PointerEventData eventData) {
+    public virtual void OnPointerUp(PointerEventData eventData) {
         gameObject.GetComponent<SpriteRenderer>().sprite = mNotPressedBtnSprite;
         if (audioSource != null && pressedBtnSound != null) {
+            // PlayOneShot no puede usarse luego para saber si ha terminado
             audioSource.clip = pressedBtnSound;
             audioSource.loop = false;
             audioSource.Play();

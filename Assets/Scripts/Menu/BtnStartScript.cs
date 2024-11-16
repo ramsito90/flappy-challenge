@@ -5,17 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class BtnStartScript : DualSpriteClickableObject {
 
-    private new void Start() {
-        base.Start();
-    }
-
     public override void OnPointerClick(PointerEventData eventData) {
         StartCoroutine(ChangeScene());
     }
 
     private IEnumerator ChangeScene() {
-        yield return new WaitUntil(() => audioSource.isPlaying == false);
+        if (audioSource != null && pressedBtnSound != null) {
+            yield return new WaitUntil(() => !audioSource.isPlaying || audioSource.time >= (pressedBtnSound.length - 0.5f));
+        }
+
         SceneManager.LoadScene("GameScene", LoadSceneMode.Single);
+        Time.timeScale = 0;
     }
 
 }
