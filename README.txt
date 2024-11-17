@@ -1,0 +1,1 @@
+Just import the project in Unity (version used 2022.3.50f1)
