@@ -2931,7 +2931,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1619044847}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d1d9c2f67c441cea3d98fcdc0f933fc, type: 3}
   m_Name: 
@@ -2980,7 +2980,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 2804f7e4b8606274eab9acfcd110ed2a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c1ff23404645a0d4689ea5e3384ba8e3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3254,7 +3254,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1690882209}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dbbf5a100b094edc9fc27235a6e18eef, type: 3}
   m_Name: 
@@ -3303,7 +3303,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 3eda75b9aa4a0a545ac2147e3e9d3955, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 66f8358b680470b4db517302590a1350, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

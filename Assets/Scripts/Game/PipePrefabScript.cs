@@ -27,7 +27,7 @@ public class PipePrefabScript : MonoBehaviour {
     }
 
     private void Update() {
-        if (mIsFinishLine && Time.timeScale == 0 && audioSource.time >= (finishLineCrossedAudioClip.length - 0.3f)) {
+        if (mIsFinishLine && Time.timeScale == 0 && (!audioSource.isPlaying || audioSource.time >= (finishLineCrossedAudioClip.length - 0.3f))) {
             ChangeScene();
         }
     }
