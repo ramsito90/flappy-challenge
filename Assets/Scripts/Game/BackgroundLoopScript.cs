@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class LoopFondo : MonoBehaviour {
+public class BackgroundLoopScript : MonoBehaviour {
 
     [SerializeField] private float speed = 0.65f;
     [SerializeField] public GameObject otherBackground;

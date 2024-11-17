@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PipeGenerator : MonoBehaviour {
+public class PipeGeneratorScript : MonoBehaviour {
 
     [SerializeField] private GameObject tubos;
 

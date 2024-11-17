@@ -6,7 +6,7 @@ public class FlappyScript : MonoBehaviour {
     
     private static FlappyScript instance;
 
-    [SerializeField] private float velocity = 1.7f;
+    [SerializeField] private float velocity = 1.5f;
     [SerializeField] private float rotationSpeed = 10f;
 
     private Rigidbody2D _pjRigidbody2D;
@@ -27,7 +27,7 @@ public class FlappyScript : MonoBehaviour {
         _pjRigidbody2D.gravityScale = LevelManager.GetInstance().Level.gravity;
     }
 
-    public void Salto() {
+    public void Jump() {
         _pjRigidbody2D.velocity = Vector2.up * velocity;
     }
 
@@ -39,7 +39,7 @@ public class FlappyScript : MonoBehaviour {
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
-        if (other.gameObject.name == "techo") {
+        if (other.gameObject.name == "roof") {
             return;
         }
 

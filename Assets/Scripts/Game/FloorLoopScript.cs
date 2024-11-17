@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class LoopSuelo : MonoBehaviour {
+public class FloorLoopScript : MonoBehaviour {
 
     private SpriteRenderer _spriteRenderer;
     private Vector2 _startSize;

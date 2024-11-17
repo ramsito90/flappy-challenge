@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 56655336}
   - component: {fileID: 56655335}
   m_Layer: 0
-  m_Name: fondo_2
+  m_Name: imgBackground2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -248,7 +248,7 @@ GameObject:
   - component: {fileID: 137110606}
   - component: {fileID: 137110605}
   m_Layer: 0
-  m_Name: techo
+  m_Name: roof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -499,7 +499,7 @@ GameObject:
   - component: {fileID: 377432806}
   - component: {fileID: 377432807}
   m_Layer: 0
-  m_Name: fondo
+  m_Name: imgBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -886,7 +886,7 @@ GameObject:
   - component: {fileID: 914184664}
   - component: {fileID: 914184663}
   m_Layer: 0
-  m_Name: generador_tubos
+  m_Name: pipeGenerator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1396,7 +1396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 965cfb26958551648902129e89ab52a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 1.7
+  velocity: 1.5
   rotationSpeed: 10
 --- !u!1 &1211803891
 GameObject:
@@ -1409,7 +1409,7 @@ GameObject:
   - component: {fileID: 1211803893}
   - component: {fileID: 1211803892}
   m_Layer: 0
-  m_Name: fondo_botones_1
+  m_Name: btnsBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2682,7 +2682,7 @@ GameObject:
   - component: {fileID: 2108840630}
   - component: {fileID: 2108840633}
   m_Layer: 0
-  m_Name: suelo
+  m_Name: floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

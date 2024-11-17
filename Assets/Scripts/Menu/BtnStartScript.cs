@@ -15,7 +15,7 @@ public class BtnStartScript : DualSpriteClickableObject {
         }
 
         SceneManager.LoadScene("GameScene", LoadSceneMode.Single);
-        Time.timeScale = 0;
+        // Time.timeScale = 0;
     }
 
 }
