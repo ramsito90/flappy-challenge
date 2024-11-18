@@ -1,12 +1,13 @@
 ﻿public class LevelManager {
 
-    private static LevelManager _instance;
+    private static LevelManager instance;
 
     public static LevelManager GetInstance() {
-        return _instance ??= new LevelManager();
+        return instance ??= new LevelManager();
     }
 
     public Level Level;
-    public readonly Score Score = new Score();
+    public Pj Pj;
+    public readonly Score Score = new();
 
 }

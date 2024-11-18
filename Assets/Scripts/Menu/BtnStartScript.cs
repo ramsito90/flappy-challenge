@@ -11,11 +11,11 @@ public class BtnStartScript : DualSpriteClickableObject {
 
     private IEnumerator ChangeScene() {
         if (audioSource != null && pressedBtnSound != null) {
-            yield return new WaitUntil(() => !audioSource.isPlaying || audioSource.time >= (pressedBtnSound.length - 0.5f));
+            yield return new WaitUntil(() => audioSource.time >= (pressedBtnSound.length - 0.5f));
         }
 
         SceneManager.LoadScene("GameScene", LoadSceneMode.Single);
-        // Time.timeScale = 0;
+        Time.timeScale = 0;
     }
 
 }

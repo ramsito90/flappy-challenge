@@ -1,0 +1,9 @@
+﻿{
+  "name": "ROCKET",
+  "animator": "Pjs/flappy_3/3_1",
+  "capsuleColliderOffset": [-0.005, -0.02],
+  "capsuleColliderSize": [0.27, 0.27],
+  "jumpVelocity": 0.75,
+  "rotationSpeed": 10,
+  "antiGravity": 0.3
+}

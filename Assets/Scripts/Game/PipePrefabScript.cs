@@ -26,12 +26,6 @@ public class PipePrefabScript : MonoBehaviour {
         transform.position += Vector3.left * (mLevel.speed * Time.fixedDeltaTime);
     }
 
-    private void Update() {
-        if (mIsFinishLine && Time.timeScale == 0 && (!audioSource.isPlaying || audioSource.time >= (finishLineCrossedAudioClip.length - 0.3f))) {
-            ChangeScene();
-        }
-    }
-
     private void OnTriggerEnter2D(Collider2D collision) {
         if (!collision.gameObject.CompareTag("Player")) return;
 
@@ -42,26 +36,31 @@ public class PipePrefabScript : MonoBehaviour {
             Toast.show(TimeSpan.FromSeconds(ScoreScript.totalSeconds).ToString(@"mm\:ss"));
             audioSource.clip = finishLineCrossedAudioClip;
             audioSource.Play();
+            StartCoroutine(ChangeScene());
         }
         else {
             audioSource.PlayOneShot(pipeCrossedAudioClip);
         }
     }
 
-    private void ChangeScene() {
-        Time.timeScale = 1;
+    private IEnumerator ChangeScene() {
+        if (audioSource != null && finishLineCrossedAudioClip != null) {
+            yield return new WaitUntil(() => audioSource.time >= (finishLineCrossedAudioClip.length - 0.5f));
+        }
+
         var totalSeconds = (long)ScoreScript.totalSeconds;
         var boardName = LevelManager.GetInstance().Level.boardName;
         if (Application.platform == RuntimePlatform.Android) {
             PlayGamesPlatform.Instance.ReportScore(totalSeconds, boardName, _ => {
                 PlayGamesPlatform.Instance.ShowLeaderboardUI(boardName, (callback) => {
                     if (callback is UIStatus.UserClosedUI or UIStatus.Valid) {
+                        Time.timeScale = 1;
                         SceneManager.LoadScene("MenuScene", LoadSceneMode.Single);
                     }
                 });
             });
-        }
-        else {
+        } else {
+            Time.timeScale = 1;
             SceneManager.LoadScene("MenuScene", LoadSceneMode.Single);
         }
     }

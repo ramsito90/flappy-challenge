@@ -17,6 +17,7 @@ public class LevelScript : MonoBehaviour {
 
     private void Start() {
         mSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+
         var level = PlayerPrefs.GetInt("Level", 1);
         LoadLevel(1, level);
     }

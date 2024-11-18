@@ -1,0 +1,9 @@
+﻿{
+  "name": "JUSTO",
+  "animator": "Pjs/flappy_1/2_1",
+  "capsuleColliderOffset": [0, -0.01],
+  "capsuleColliderSize": [0.27, 0.24],
+  "jumpVelocity": 1.5,
+  "rotationSpeed": 10,
+  "antiGravity": 0.0
+}
