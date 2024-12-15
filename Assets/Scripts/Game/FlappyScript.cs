@@ -1,12 +1,11 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem.EnhancedTouch;
-using UnityEngine.SceneManagement;
 
 public class FlappyScript : MonoBehaviour {
     
     [SerializeField] public AudioSource audioSource;
     [SerializeField] public AudioClip gameOverAudioClip;
+    [SerializeField] public GameObject pnlGameOver;
 
     private static FlappyScript instance;
 
@@ -14,6 +13,7 @@ public class FlappyScript : MonoBehaviour {
     private Rigidbody2D mPjRigidbody2D;
     private Animator mAnimator;
     private float mOriginalPositionX;
+    private Vector3? mEndPosition;
 
     private void Awake() {
         instance = this;
@@ -45,8 +45,16 @@ public class FlappyScript : MonoBehaviour {
 
     private void FixedUpdate() {
         transform.rotation = Quaternion.Euler(0, 0, mPjRigidbody2D.velocity.y * mPj.rotationSpeed);
+
         if (transform.position.x != mOriginalPositionX) {
             transform.position += Vector3.left * (transform.position.x - mOriginalPositionX);
+        }
+
+        if (mEndPosition != null) {
+            if (!Mathf.Approximately(pnlGameOver.transform.position.y, mEndPosition.Value.y)) {
+                pnlGameOver.transform.position =
+                    Vector3.Lerp(pnlGameOver.transform.position, mEndPosition.Value, 7 * Time.deltaTime);
+            }
         }
     }
 
@@ -54,21 +62,15 @@ public class FlappyScript : MonoBehaviour {
         if (other.gameObject.name == "roof") {
             return;
         }
-        
-        Time.timeScale = 0;
+
+        LevelManager.GetInstance().Level.speed = 0f;
         audioSource.clip = gameOverAudioClip;
         audioSource.Play();
-        StartCoroutine(ChangeScene());
+        ShowGameOverPanel();
     }
     
-    private IEnumerator ChangeScene() {
-        if (audioSource != null && gameOverAudioClip != null) {
-            yield return new WaitUntil(() => audioSource.time >= gameOverAudioClip.length);
-        }
-
-        //TODO mostrar escena de resumen
-        Time.timeScale = 1;
-        SceneManager.LoadScene("MenuScene", LoadSceneMode.Single);
+    private void ShowGameOverPanel() {
+        mEndPosition = new Vector3(pnlGameOver.transform.position.x, 0.3f, pnlGameOver.transform.position.z);
     }
 
 }
