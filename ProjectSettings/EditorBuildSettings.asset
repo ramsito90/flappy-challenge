@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameScene.unity
     guid: 3fc8acdd13e6c734bafef6554d6fdbcd
+  - enabled: 1
+    path: Assets/Scenes/CreditsScene.unity
+    guid: 83b795ef0afbdc34da5392c62e15b3c2
   m_configObjects:
     com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: f98c7dc470ab9f44fb23b55698a75206, type: 2}
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 04357517425f1f840a0651f8d65b3ada, type: 2}
