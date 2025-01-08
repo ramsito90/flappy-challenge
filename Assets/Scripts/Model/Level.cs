@@ -20,6 +20,7 @@ public class Level {
         public string spriteFinishLine;
         public float distance;
         public float[] heights;
+        public float[] stars;
 
     }
 

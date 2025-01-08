@@ -1,11 +1,16 @@
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem.EnhancedTouch;
 
 public class FlappyScript : MonoBehaviour {
     
     [SerializeField] public AudioSource audioSource;
+    [SerializeField] public AudioSource audioSourceBackMusic;
     [SerializeField] public AudioClip gameOverAudioClip;
     [SerializeField] public GameObject pnlGameOver;
+    
+    [SerializeField] public GameObject btnJump;
+    [SerializeField] public GameObject btnSpeed;
 
     private static FlappyScript instance;
 
@@ -59,13 +64,23 @@ public class FlappyScript : MonoBehaviour {
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
-        if (other.gameObject.name == "roof") {
+        Debug.Log("Collided with " + other.gameObject.name);
+        if (other.gameObject.name is "roof" or "coin" || other.gameObject.name.Contains("pnl") || other.gameObject.name.Contains("btn")) {
             return;
         }
 
         LevelManager.GetInstance().Level.speed = 0f;
-        audioSource.clip = gameOverAudioClip;
-        audioSource.Play();
+        if (gameOverAudioClip != null) {
+            audioSource.PlayOneShot(gameOverAudioClip);
+        }
+        gameOverAudioClip = null;
+        btnJump.GetComponent<BoxCollider2D>().enabled = false;
+        btnSpeed.GetComponent<BoxCollider2D>().enabled = false;
+        
+        audioSourceBackMusic.mute = true;
+        audioSourceBackMusic.Pause();
+        audioSourceBackMusic.Stop();
+
         ShowGameOverPanel();
     }
     

@@ -6,11 +6,12 @@
   "gravity": 0.0,
   "pipe": {
     "prefab": "pipesPrefab",
-    "spriteUp": "Assets/Sprites/tubo_amarillo",
-    "spriteDown": "Assets/Sprites/tubo_amarillo",
-    "spriteFinishLine": "Assets/Sprites/tubo_verde",
+    "spriteUp": "tubo_amarillo",
+    "spriteDown": "tubo_amarillo",
+    "spriteFinishLine": "tubo_verde",
     "distance": 1,
-    "heights": [0.1, 0.1]
+    "heights": [0.1, 0.1, 0.1, 0.1, 0.1, 0.1],
+    "stars": [0.3, 0.3, 0.3, 0.3, 0.3, 0.3]
   },
   "hc": ""
 }

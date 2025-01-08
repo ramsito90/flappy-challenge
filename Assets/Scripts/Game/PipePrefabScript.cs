@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Linq;
 using GooglePlayGames;
 using GooglePlayGames.BasicApi;
 using UnityEngine;
@@ -7,18 +8,38 @@ using UnityEngine.SceneManagement;
 
 public class PipePrefabScript : MonoBehaviour {
 
-    [SerializeField] public Sprite finishLineSprite;
     [SerializeField] public AudioSource audioSource;
     [SerializeField] public AudioClip pipeCrossedAudioClip;
     [SerializeField] public AudioClip finishLineCrossedAudioClip;
 
-    private bool mIsFinishLine = false;
+    private bool mIsFinishLine;
     private Level mLevel;
 
     private void Start() {
         mLevel = LevelManager.GetInstance().Level;
         if (audioSource == null || pipeCrossedAudioClip == null || finishLineCrossedAudioClip == null) {
             throw new Exception("AudioSource, PipeCrossedAudioClip y FinishLineCrossedAudioClip no pueden ser nulos");
+        }
+
+        var sprites = Resources.LoadAll<Sprite>("Sprites/SimpleStyle1");
+
+        if (!mIsFinishLine) {
+            var sprite = sprites.FirstOrDefault(s => s.name == mLevel.pipe.spriteUp);
+            if (sprite != null) {
+                transform.Find("tubo_sup").GetComponent<SpriteRenderer>().sprite = sprite;
+            }
+
+            sprite = sprites.FirstOrDefault(s => s.name == mLevel.pipe.spriteDown);
+            if (sprite != null) {
+                transform.Find("tubo_inf").GetComponent<SpriteRenderer>().sprite = sprite;
+            }
+        }
+        else {
+            var sprite = sprites.FirstOrDefault(s => s.name == mLevel.pipe.spriteFinishLine);
+            if (sprite != null) {
+                transform.Find("tubo_sup").GetComponent<SpriteRenderer>().sprite = sprite;
+                transform.Find("tubo_inf").GetComponent<SpriteRenderer>().sprite = sprite;
+            }
         }
     }
 
@@ -59,7 +80,8 @@ public class PipePrefabScript : MonoBehaviour {
                     }
                 });
             });
-        } else {
+        }
+        else {
             Time.timeScale = 1;
             SceneManager.LoadScene("MenuScene", LoadSceneMode.Single);
         }
@@ -67,12 +89,6 @@ public class PipePrefabScript : MonoBehaviour {
 
     public void SetFinishLine(bool isFinishLine) {
         mIsFinishLine = isFinishLine;
-        if (isFinishLine) {
-            var tuboSup = transform.GetChild(0).gameObject;
-            tuboSup.GetComponent<SpriteRenderer>().sprite = finishLineSprite;
-            var tuboInf = transform.GetChild(1).gameObject;
-            tuboInf.GetComponent<SpriteRenderer>().sprite = finishLineSprite;
-        }
     }
 
 }
