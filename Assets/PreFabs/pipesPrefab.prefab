@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 1376987157030820853}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.28177112, y: -0.7, z: -0.087406226}
+  m_LocalPosition: {x: -0.28177112, y: -1.4112, z: -0.087406226}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 1
-  m_Size: {x: 0.32, y: 1.5}
+  m_Size: {x: 0.32, y: 2.9224386}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -123,7 +123,7 @@ BoxCollider2D:
     border: {x: 0, y: 0.19999999, z: 0, w: 0.19999999}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.32, y: 0.8}
-    newSize: {x: 0.32, y: 1.5}
+    newSize: {x: 0.32, y: 2.9224386}
     adaptiveTilingThreshold: 0.5
     drawMode: 1
     adaptiveTiling: 0
@@ -163,12 +163,12 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.71}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0.19999999, z: 0, w: 0.19999999}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.32, y: 0.8}
-    newSize: {x: 0.32, y: 1.5}
+    newSize: {x: 0.32, y: 2.9224386}
     adaptiveTilingThreshold: 0.5
     drawMode: 1
     adaptiveTiling: 0
@@ -281,7 +281,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b90a7115b78ab2f418ec75a1408e98c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  finishLineSprite: {fileID: -795745285, guid: 5add1e5b8e5cc044983ecedb3fd77bbd, type: 3}
   audioSource: {fileID: 8501333283174734861}
   pipeCrossedAudioClip: {fileID: 8300000, guid: 2902f9afb696bf0409c4f42297c6c333, type: 3}
   finishLineCrossedAudioClip: {fileID: 8300000, guid: 2b9430b7341b28349bbdc4147376764d, type: 3}
@@ -441,7 +440,7 @@ Transform:
   m_GameObject: {fileID: 7307177640701968314}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.28177112, y: 1.5, z: -0.087406226}
+  m_LocalPosition: {x: -0.28177112, y: 2.3653, z: -0.087406226}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -493,7 +492,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 1
-  m_Size: {x: 0.32, y: 1.5}
+  m_Size: {x: 0.32, y: 3.2306876}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -536,7 +535,7 @@ BoxCollider2D:
     border: {x: 0, y: 0.19999999, z: 0, w: 0.19999999}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.32, y: 0.8}
-    newSize: {x: 0.32, y: 1.5}
+    newSize: {x: 0.32, y: 3.2306876}
     adaptiveTilingThreshold: 0.5
     drawMode: 1
     adaptiveTiling: 0
@@ -576,12 +575,12 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.86}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0.19999999, z: 0, w: 0.19999999}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.32, y: 0.8}
-    newSize: {x: 0.32, y: 1.5}
+    newSize: {x: 0.32, y: 3.2306876}
     adaptiveTilingThreshold: 0.5
     drawMode: 1
     adaptiveTiling: 0

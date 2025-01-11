@@ -38,7 +38,7 @@ public class LevelScript : MonoBehaviour {
         var level = PlayerPrefs.GetInt("Level", 1);
         level--;
         if (!LoadLevel(1, level)) {
-            level = 2; //TODO coger del json de world
+            level = 3; //TODO coger del json de world
             LoadLevel(1, level);
         }
 

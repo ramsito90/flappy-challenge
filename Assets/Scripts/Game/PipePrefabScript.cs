@@ -69,10 +69,10 @@ public class PipePrefabScript : MonoBehaviour {
             yield return new WaitUntil(() => audioSource.time >= (finishLineCrossedAudioClip.length - 0.5f));
         }
 
-        var totalSeconds = (long)ScoreScript.totalSeconds;
+        var totalMillis = (long)ScoreScript.totalSeconds * 1000;
         var boardName = LevelManager.GetInstance().Level.boardName;
-        if (Application.platform == RuntimePlatform.Android) {
-            PlayGamesPlatform.Instance.ReportScore(totalSeconds, boardName, _ => {
+        if (Application.platform == RuntimePlatform.Android && boardName != null) {
+            PlayGamesPlatform.Instance.ReportScore(totalMillis, boardName, _ => {
                 PlayGamesPlatform.Instance.ShowLeaderboardUI(boardName, (callback) => {
                     if (callback is UIStatus.UserClosedUI or UIStatus.Valid) {
                         Time.timeScale = 1;

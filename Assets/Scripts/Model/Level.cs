@@ -6,6 +6,7 @@ public class Level {
     public string name;
     public string sprite;
     public string boardName;
+    public string achievement;
     public float speed;
     public float gravity;
 

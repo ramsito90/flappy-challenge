@@ -17,6 +17,9 @@ public class GameManager : MonoBehaviour {
 
     private static void ProcessAuthentication(SignInStatus status) {
         if (status == SignInStatus.Success) {
+            Social.ReportProgress("CgkI9eiF6tEXEAIQAw", 100.0f, (bool success) => {
+                // handle success or failure
+            });
             // Continue with Play Games Services
         } else {
             // Disable your integration with Play Games Services or show a login button

@@ -2,16 +2,16 @@
   "name": "2",
   "sprite": "Sprites/PIXELPERF-BUTTONKIT/Button Kit/16x16 buttons Style 2 0-9 symbols only/2",
   "boardName": "CgkI9eiF6tEXEAIQAg",
-  "speed": 1.0,
-  "gravity": 0.0,
+  "speed": 0.65,
+  "gravity": 0.7,
   "pipe": {
     "prefab": "pipesPrefab",
     "spriteUp": "tubo_amarillo",
     "spriteDown": "tubo_amarillo",
     "spriteFinishLine": "tubo_verde",
-    "distance": 1,
-    "heights": [0.1, 0.1, 0.1, 0.1, 0.1, 0.1],
-    "stars": [0.3, 0.3, 0.3, 0.3, 0.3, 0.3]
+    "distance": 2.2,
+    "heights": [0.1, 0.4, 0.7, 1.0, 0.2, 0.6, 0.1, 0.5, 0.8, 1.0],
+    "stars": [0.3, 0.6, -10, 1.1, 0.6, -10, -10, -10, 0.9, 1.1]
   },
   "hc": ""
 }
